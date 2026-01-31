@@ -9,13 +9,6 @@ import java.util.List;
 public class BookService {
     private List<Book> books=new ArrayList<>();
 
-    public void initData() {
-        books.add(new Book(1, "Clean Code", "Robert C. Martin"));
-        books.add(new Book(2, "Effective Java", "Joshua Bloch"));
-        books.add(new Book(3, "Spring in Action", "Craig Walls"));
-        books.add(new Book(4, "Design Patterns", "Erich Gamma"));
-    }
-
     public List<Book> getAllBooks() {
         return books;
     }
