@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sách</title>
+</head>
+<body>
+<h1>Danh sách sách</h1>
+
+<ul id="bookList"></ul>
+
+<script>
+    fetch("http://localhost:8080/api/books/book")
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById("bookList");
+
+            data.forEach(book => {
+                const li = document.createElement("li");
+                li.textContent = `ID: ${book.id} - ${book.title} - ${book.author}`;
+                list.appendChild(li);
+            });
+        })
+        .catch(error => {
+            console.error("Lỗi khi gọi API:", error);
+        });
+</script>
+</body>
+</html>
